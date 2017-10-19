@@ -8,6 +8,12 @@
 
     <string name="splash_screen_title">Salão ON</string>
 
+    <string name="category_register_text">Faça o login como cliente e aproveite os
+        nossos beneficíos ou faça o login como profissional e tenha ótimos ganhos. </string>
+    <string name="category_register_client">Cliente</string>
+    <string name="category_register_professional">Profissional</string>
+
     <string name="sign_with_email">Email</string>
     <string name="sign_with_password">Senha</string>
+    <string name="sign_with_button_login">Entrar</string>
 </resources>
