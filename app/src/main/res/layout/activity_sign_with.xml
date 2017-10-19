@@ -54,12 +54,21 @@
 
     </RelativeLayout>-->
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button_facebook"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginBottom="25dp"
-        android:layout_gravity="center"
-        android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/blueFacebook"
+        android:layout_alignParentBottom="true">
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="7dp"
+            android:background="@color/blueFacebook"/>
+    </RelativeLayout>
+
 </RelativeLayout>
