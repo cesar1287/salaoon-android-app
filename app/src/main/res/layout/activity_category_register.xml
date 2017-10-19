@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.salaoon.CategoryRegisterActivity">
+    tools:context="comcesar1287.github.salaoon.CategoryRegisterActivity"
+    android:background="@drawable/salaoon_image_hairdresser">
 
     <TextView
         android:layout_width="290dp"
@@ -12,6 +13,8 @@
         android:text="@string/category_register_text"
         android:textSize="27sp"
         android:layout_marginTop="220dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_marginLeft="15dp"/>
 
     <LinearLayout
@@ -28,9 +31,13 @@
             android:layout_weight="0.5">
 
             <Button
+                android:id="@+id/button_category_client"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
-                android:text="@string/category_register_client"/>
+                android:textStyle="bold"
+                android:text="@string/category_register_client"
+                android:background="@color/colorLight"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
 
@@ -40,9 +47,13 @@
             android:layout_weight="0.5">
 
             <Button
+                android:id="@+id/button_category_professional"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
-                android:text="@string/category_register_professional"/>
+                android:textStyle="bold"
+                android:text="@string/category_register_professional"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
 
