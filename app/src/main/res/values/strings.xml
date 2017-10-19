@@ -15,5 +15,11 @@
 
     <string name="sign_with_email">Email</string>
     <string name="sign_with_password">Senha</string>
+<<<<<<< HEAD
     <string name="sign_with_button_login">Entrar</string>
+=======
+
+    <string name="facebook_app_id">658722750997881</string>
+    <string name="fb_login_protocol_scheme">fb658722750997881</string>
+>>>>>>> 7c1b7f93c908dd723f3a7a053897b0c74d9c73f1
 </resources>
