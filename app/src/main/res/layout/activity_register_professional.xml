@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.salaoon.RegisterProfessionalActivity">
+    tools:context="comcesar1287.github.salaoon.view.RegisterProfessionalActivity">
 
 </android.support.constraint.ConstraintLayout>

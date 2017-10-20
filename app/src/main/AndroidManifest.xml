@@ -61,12 +61,12 @@
         </activity>
 
         <activity
-            android:name=".RegisterClientActivity"
+            android:name=".view.RegisterClientActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name=".RegisterProfessionalActivity"
+            android:name=".view.RegisterProfessionalActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 

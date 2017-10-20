@@ -30,6 +30,14 @@ public class Utility {
         return (email.isEmpty() || pass.isEmpty());
     }
 
+    public static boolean isValidCPF(String cpf) {
+        if ((cpf==null) || (cpf.length()!=11)) return false;
+
+        Integer digito1 = calcularDigito(cpf.substring(0,9), pesoCPF);
+        Integer digito2 = calcularDigito(cpf.substring(0,9) + digito1, pesoCPF);
+        return cpf.equals(cpf.substring(0,9) + digito1.toString() + digito2.toString());
+    }
+
     private static int calcularDigito(String str, int[] peso) {
         int soma = 0;
         for (int indice=str.length()-1, digito; indice >= 0; indice-- ) {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ import comcesar1287.github.salaoon.R;
 import comcesar1287.github.salaoon.controller.domain.User;
 import comcesar1287.github.salaoon.controller.firebase.FirebaseHelper;
 
+import comcesar1287.github.salaoon.controller.util.Utility;
 import es.dmoral.toasty.Toasty;
 
 public class SignWithActivity extends AppCompatActivity implements FacebookCallback<LoginResult>, View.OnClickListener{
@@ -51,7 +53,7 @@ public class SignWithActivity extends AppCompatActivity implements FacebookCallb
 
     private DatabaseReference mDatabase;
 
-    private String Uid, name , email, profile_pic;
+    private String Uid, name , email, profile_pic, database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,8 @@ public class SignWithActivity extends AppCompatActivity implements FacebookCallb
         mAuth = FirebaseAuth.getInstance();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        database = getIntent().getStringExtra(Utility.KEY_CONTENT_EXTRA_DATABASE);
 
         setContentView(R.layout.activity_sign_with);
 
@@ -150,12 +154,41 @@ public class SignWithActivity extends AppCompatActivity implements FacebookCallb
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (task.isSuccessful()) {
-                            dialog.dismiss();
-                            startActivity(new Intent(SignWithActivity.this, MainActivity.class));
-                            finish();
+                            checkIfRegistrationIsComplete();
                         }
                     }
                 });
+    }
+
+    private void checkIfRegistrationIsComplete() {
+        DatabaseReference ckeckRegistration = mDatabase.child(database);
+        ckeckRegistration.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if(!snapshot.child(mAuth.getCurrentUser().getUid()).exists()) {
+                    if (database.equals(FirebaseHelper.FIREBASE_DATABASE_CLIENTS)) {
+                        Intent intent = new Intent(SignWithActivity.this, RegisterClientActivity.class);
+                        intent.putExtra(Utility.KEY_CONTENT_EXTRA_DATABASE, database);
+                        startActivity(intent);
+                    } else if (database.equals(FirebaseHelper.FIREBASE_DATABASE_PROFESSINALS)) {
+                        Intent intent = new Intent(SignWithActivity.this, RegisterProfessionalActivity.class);
+                        intent.putExtra(Utility.KEY_CONTENT_EXTRA_DATABASE, database);
+                        startActivity(intent);
+                    }
+                    finish();
+                }else{
+                    startActivity(new Intent(SignWithActivity.this, MainActivity.class));
+                    finish();
+                }
+
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                dialog.dismiss();
+            }
+        });
     }
 
     public void finishLogin(FirebaseUser user){

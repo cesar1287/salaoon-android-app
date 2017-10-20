@@ -36,7 +36,6 @@
     <string name="register_client_address">Endereço</string>
     <string name="register_client_button_save">Salvar</string>
 
-
-
-
+    <string name="cpf_mask">###.###.###-##</string>
+    <string name="cep_mask">#####-###</string>
 </resources>

@@ -100,11 +100,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent intent = new Intent(this, RegisterClientActivity.class);
-            startActivity(intent);
+            /*Intent intent = new Intent(this, RegisterClientActivity.class);
+            startActivity(intent);*/
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(this, RegisterProfessionalActivity.class);
-            startActivity(intent);
+            /*Intent intent = new Intent(this, RegisterProfessionalActivity.class);
+            startActivity(intent);*/
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

@@ -2,6 +2,7 @@ package comcesar1287.github.salaoon.controller.firebase;
 
 import com.google.firebase.database.DatabaseReference;
 
+import comcesar1287.github.salaoon.controller.domain.Client;
 import comcesar1287.github.salaoon.controller.domain.User;
 
 public class FirebaseHelper {
@@ -16,5 +17,13 @@ public class FirebaseHelper {
         User user = new User(name, email, profile_pic);
 
         mDatabase.child(FIREBASE_DATABASE_USERS).child(userId).setValue(user);
+    }
+
+    public static void writeNewClient(DatabaseReference mDatabase, String userId, String name,
+                                    String cpf, String cep, String address) {
+
+        Client client = new Client(name, cpf, cep, address);
+
+        mDatabase.child(FIREBASE_DATABASE_CLIENTS).child(userId).setValue(client);
     }
 }
