@@ -8,8 +8,7 @@
 
     <string name="splash_screen_title">Salão ON</string>
 
-    <string name="category_register_text">Faça o login como cliente e aproveite os
-        nossos beneficíos ou faça o login como profissional e tenha ótimos ganhos. </string>
+    <string name="category_register_text">Como você deseja realizar o login? </string>
     <string name="category_register_client">Cliente</string>
     <string name="category_register_professional">Profissional</string>
 
@@ -23,4 +22,9 @@
     <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo usado em nosso sistema e dispositivo.\nTente novamente com outro método de login.</string>
     <string name="error_unknown_error">Erro desconhecido, tente novamente e contate o administrador.</string>
     <string name="error_signin">Algo deu errado ao fazer login, tente novamente.</string>
+
+    <string name="sign_with_text">Bem vindo ao Salão On</string>
+    <string name="sign_with_text2">Faça seu login e aproveite</string>
+
+    <string name="nav_header_exit">Sair</string>
 </resources>

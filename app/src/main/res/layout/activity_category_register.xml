@@ -13,15 +13,20 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/salao_on_image_logo"/>
 
-    <!--<TextView
-        android:layout_width="290dp"
-        android:layout_height="match_parent"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/category_register_text"
-        android:textSize="27sp"
-        android:layout_marginTop="220dp"
+        android:textSize="21sp"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:layout_marginLeft="15dp"/>-->
+        android:layout_above="@+id/tags"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp" />
 
     <LinearLayout
         android:id="@+id/tags"
