@@ -1,9 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.salaoon.view.RegisterProfessionalActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="comcesar1287.github.salaoon.RegisterProfessionalActivity"
+        android:background="@color/pink">
+
+        <TextView
+            android:id="@+id/register_professional_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_professional_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:textSize="31sp"
+            android:textColor="@color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:layout_below="@id/register_professional_title">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/register_client_photo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/register_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/register_client_photo">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_professional_name"
+                    android:inputType="textPersonName"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/register_cnpj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/register_name"
+                android:layout_marginTop="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_edit_cnpj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_professional_cnpj"
+                    android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/register_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/register_cnpj"
+                android:layout_marginTop="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_edit_cpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_professional_cpf"
+                    android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/register_cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/register_cpf"
+                android:layout_marginTop="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_edit_cep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_professional_cep"
+                    android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/register_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/register_cep"
+                android:layout_marginTop="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_edit_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_professional_address"
+                    android:inputType="textPostalAddress"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/register_text_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_address"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"
+                android:textSize="15sp"
+                android:text="Selecione a hora de abertura e encerramento"/>
+
+            <LinearLayout
+                android:id="@+id/register_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_text_hour"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:text="Abertura"/>
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:text="Encerramento"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/register_text_specialty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione suas especialidade"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_below="@id/register_hour"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="3dp"/>
+
+            <CheckBox
+                android:id="@+id/check_register_hairdresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_text_specialty"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cabeleireiro"
+                android:id="@+id/textView"
+                android:layout_alignBaseline="@+id/check_register_hairdresse"
+                android:layout_alignBottom="@+id/check_register_hairdresse"
+                android:layout_toRightOf="@+id/check_register_hairdresse"
+                android:layout_toEndOf="@+id/check_register_hairdresse" />
+
+            <CheckBox
+                android:id="@+id/check_register_make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_register_hairdresse" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maquiadora"
+                android:layout_alignBaseline="@+id/check_register_make"
+                android:layout_alignBottom="@+id/check_register_make"
+                android:layout_alignRight="@+id/textView"
+                android:layout_alignEnd="@+id/textView"
+                android:id="@+id/textView2" />
+
+            <CheckBox
+                android:id="@+id/check_register_manicure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/check_register_make"/>
+            <TextView
+                android:id="@+id/text_manicure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manicure"
+                android:layout_alignBaseline="@+id/check_register_manicure"
+                android:layout_alignBottom="@+id/check_register_manicure"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/register_professional_button_save"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="35dp"
+                android:layout_below="@id/text_manicure"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

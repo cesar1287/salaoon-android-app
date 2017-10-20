@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#b0003a</color>
     <color name="colorLight">#ff6090</color>
     <color name="colorAccent">#FF4081</color>
-    
+
+    <color name="pink">#F48FB1</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="concrete">#95a5a6</color>
