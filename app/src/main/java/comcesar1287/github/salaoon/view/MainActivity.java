@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import comcesar1287.github.salaoon.R;
+import comcesar1287.github.salaoon.RegisterClientActivity;
+import comcesar1287.github.salaoon.RegisterProfessionalActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
