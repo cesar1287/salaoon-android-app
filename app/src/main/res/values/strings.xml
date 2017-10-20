@@ -8,15 +8,18 @@
 
     <string name="splash_screen_title">Salão ON</string>
 
-    <string name="category_register_text">Faça o login como cliente e aproveite os
-        nossos beneficíos ou faça o login como profissional e tenha ótimos ganhos. </string>
+    <string name="category_register_text">Como você deseja realizar o login? </string>
     <string name="category_register_client">Cliente</string>
     <string name="category_register_professional">Profissional</string>
 
     <string name="sign_with_email">Email</string>
     <string name="sign_with_password">Senha</string>
     <string name="sign_with_button_login">Entrar</string>
+    <string name="sign_with_text">Bem vindo ao Salão On</string>
+    <string name="sign_with_text2">Faça seu login e aproveite</string>
 
     <string name="facebook_app_id">658722750997881</string>
     <string name="fb_login_protocol_scheme">fb658722750997881</string>
+    
+    <string name="nav_header_exit">Sair</string>
 </resources>
