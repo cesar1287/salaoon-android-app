@@ -142,13 +142,15 @@
                     android:id="@+id/register_button_hour_first"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="@string/register_professional_button_hour_first"/>
+                    android:text="@string/register_professional_button_hour_first"
+                    android:onClick="btn_hour_first"/>
 
                 <Button
                     android:id="@+id/register_button_hour_final"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="@string/register_professional_button_hour_final"/>
+                    android:text="@string/register_professional_button_hour_final"
+                    android:onClick="btn_hour_final"/>
 
             </LinearLayout>
 
@@ -156,7 +158,7 @@
                 android:id="@+id/register_text_specialty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/register_professional_text_hour"
+                android:text="@string/register_professional_text_specialty"
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:layout_below="@id/register_hour"
