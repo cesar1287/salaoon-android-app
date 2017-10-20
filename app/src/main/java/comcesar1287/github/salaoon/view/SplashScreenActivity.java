@@ -22,7 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreenActivity.this, CategoryRegisterActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -31,7 +31,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.logo_move);
 
-        logo = (ImageView) findViewById(R.id.logo);
+        logo = findViewById(R.id.logo);
         logo.startAnimation(animation);
     }
 }
