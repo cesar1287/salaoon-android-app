@@ -37,10 +37,13 @@
 
     <string name="register_professional_title">Cadastro do Profissional</string>
     <string name="register_professional_name">Nome completo</string>
+    <string name="register_professional_cnpj">CNPJ</string>
     <string name="register_professional_cpf">CPF</string>
     <string name="register_professional_cep">CEP</string>
     <string name="register_professional_address">Endereço</string>
     <string name="register_professional_button_save">Salvar</string>
+    <string name="register_professional_hour_first">Horário de abertura</string>
+    <string name="register_professional_hour_final">Horário de fechamento</string>
 
 
 

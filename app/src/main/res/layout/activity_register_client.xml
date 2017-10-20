@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="comcesar1287.github.salaoon.RegisterClientActivity"
-        android:background="@color/colorLight">
+        android:background="@color/pink">
 
         <TextView
             android:id="@+id/register_client_title"
@@ -113,8 +113,6 @@
                 android:layout_below="@id/register_address"/>
 
         </RelativeLayout>
-
-
 
     </RelativeLayout>
 </ScrollView>
