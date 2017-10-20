@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.salaoon.SplashScreenActivity"
+    tools:context="comcesar1287.github.salaoon.view.SplashScreenActivity"
     android:background="@color/colorAccent">
 
     <ImageView

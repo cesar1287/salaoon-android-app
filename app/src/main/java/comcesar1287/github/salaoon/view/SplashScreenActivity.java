@@ -1,4 +1,4 @@
-package comcesar1287.github.salaoon;
+package comcesar1287.github.salaoon.view;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import comcesar1287.github.salaoon.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
