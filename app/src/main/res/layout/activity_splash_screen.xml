@@ -6,14 +6,11 @@
     tools:context="comcesar1287.github.salaoon.SplashScreenActivity"
     android:background="@color/colorAccent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="@string/splash_screen_title"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:src="@drawable/salao_on_image_logo"
+        android:layout_marginTop="170dp"/>
 
 </RelativeLayout>
