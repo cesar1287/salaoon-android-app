@@ -42,9 +42,13 @@
     <string name="register_professional_cep">CEP</string>
     <string name="register_professional_address">Endereço</string>
     <string name="register_professional_button_save">Salvar</string>
-    <string name="register_professional_hour_first">Horário de abertura</string>
-    <string name="register_professional_hour_final">Horário de fechamento</string>
-
+    <string name="register_professional_button_hour_first">Abertura</string>
+    <string name="register_professional_button_hour_final">Encerramento</string>
+    <string name="register_professional_text_hour">Selecione a hora de abertura e encerramento</string>
+    <string name="register_professional_text_specialty">Selecione suas especialidade</string>
+    <string name="register_professional_hairdresse">Cabeleireira</string>
+    <string name="register_professional_check_make">Maqueadora</string>
+    <string name="register_professional_manicure">Manicure</string>
 
 
 

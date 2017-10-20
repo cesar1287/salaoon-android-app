@@ -129,7 +129,7 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="7dp"
                 android:textSize="15sp"
-                android:text="Selecione a hora de abertura e encerramento"/>
+                android:text="@string/register_professional_text_hour"/>
 
             <LinearLayout
                 android:id="@+id/register_hour"
@@ -139,14 +139,16 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/register_button_hour_first"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="Abertura"/>
+                    android:text="@string/register_professional_button_hour_first"/>
 
                 <Button
+                    android:id="@+id/register_button_hour_final"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="Encerramento"/>
+                    android:text="@string/register_professional_button_hour_final"/>
 
             </LinearLayout>
 
@@ -154,7 +156,7 @@
                 android:id="@+id/register_text_specialty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Selecione suas especialidade"
+                android:text="@string/register_professional_text_hour"
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:layout_below="@id/register_hour"
@@ -169,7 +171,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cabeleireiro"
+                android:text="@string/register_professional_hairdresse"
                 android:id="@+id/textView"
                 android:layout_alignBaseline="@+id/check_register_hairdresse"
                 android:layout_alignBottom="@+id/check_register_hairdresse"
@@ -184,7 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Maquiadora"
+                android:text="@string/register_professional_check_make"
                 android:layout_alignBaseline="@+id/check_register_make"
                 android:layout_alignBottom="@+id/check_register_make"
                 android:layout_alignRight="@+id/textView"
@@ -200,12 +202,11 @@
                 android:id="@+id/text_manicure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Manicure"
+                android:text="@string/register_professional_manicure"
                 android:layout_alignBaseline="@+id/check_register_manicure"
                 android:layout_alignBottom="@+id/check_register_manicure"
                 android:layout_alignLeft="@+id/textView2"
                 android:layout_alignStart="@+id/textView2" />
-
 
             <Button
                 android:layout_width="match_parent"
