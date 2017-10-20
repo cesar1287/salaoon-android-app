@@ -20,6 +20,6 @@
 
     <string name="facebook_app_id">658722750997881</string>
     <string name="fb_login_protocol_scheme">fb658722750997881</string>
-    
+
     <string name="nav_header_exit">Sair</string>
 </resources>
