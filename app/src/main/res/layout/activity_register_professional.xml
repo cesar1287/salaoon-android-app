@@ -213,6 +213,7 @@
                 android:layout_alignStart="@+id/textView2" />
 
             <Button
+                android:id="@+id/register_save"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="@string/register_professional_button_save"
