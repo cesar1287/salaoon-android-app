@@ -8,9 +8,11 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context="comcesar1287.github.salaoon.RegisterProfessionalActivity"
-        android:background="@color/pink">
+        android:background="@color/pink"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:id="@+id/register_professional_title"
@@ -20,6 +22,10 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="35dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:textSize="31sp"
             android:textColor="@color/white"/>
 
@@ -52,7 +58,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <!--<android.support.design.widget.TextInputLayout
                 android:id="@+id/register_cnpj"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,14 +73,14 @@
                     android:hint="@string/register_professional_cnpj"
                     android:inputType="number"/>
 
-            </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>-->
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/register_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/TextLabel"
-                android:layout_below="@id/register_cnpj"
+                android:layout_below="@id/register_name"
                 android:layout_marginTop="5dp">
 
                 <android.support.design.widget.TextInputEditText
@@ -175,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_professional_hairdresse"
-                android:id="@+id/textView"
+                android:id="@+id/text_hairdresse"
                 android:layout_alignBaseline="@+id/check_register_hairdresse"
                 android:layout_alignBottom="@+id/check_register_hairdresse"
                 android:layout_toRightOf="@+id/check_register_hairdresse"
@@ -192,9 +198,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/register_professional_check_make"
                 android:layout_alignBaseline="@+id/check_register_make"
-                android:layout_alignRight="@+id/textView"
-                android:layout_alignEnd="@+id/textView"
-                android:id="@+id/textView2" />
+                android:layout_alignRight="@+id/text_hairdresse"
+                android:layout_alignEnd="@+id/text_hairdresse"
+                android:id="@+id/text_make" />
 
             <CheckBox
                 android:id="@+id/check_register_manicure"
@@ -209,8 +215,8 @@
                 android:text="@string/register_professional_manicure"
                 android:layout_alignBaseline="@+id/check_register_manicure"
                 android:layout_alignBottom="@+id/check_register_manicure"
-                android:layout_alignLeft="@+id/textView2"
-                android:layout_alignStart="@+id/textView2" />
+                android:layout_alignLeft="@+id/text_make"
+                android:layout_alignStart="@+id/text_make" />
 
             <Button
                 android:id="@+id/register_save"

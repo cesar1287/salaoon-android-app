@@ -107,8 +107,6 @@ public class RegisterClientActivity extends AppCompatActivity implements View.On
         }
 
         if(allFieldsFilled){
-            cpf = cpf.replaceAll("[.]", "").replaceAll("[-]","");
-
             if(!Utility.isValidCPF(cpf)){
                 allFilledCorrectly = false;
                 etCPF.setError("CPF inválido");

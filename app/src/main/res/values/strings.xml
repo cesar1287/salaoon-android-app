@@ -28,7 +28,7 @@
 
     <string name="nav_header_exit">Sair</string>
 
-    <string name="register_client_title">Cadastro do cliente</string>
+    <string name="register_client_title">Complete seu cadastro de Cliente</string>
     <string name="register_client_name">Nome completo</string>
     <string name="register_client_cpf">CPF</string>
     <string name="register_client_cep">CEP</string>
@@ -36,9 +36,10 @@
     <string name="register_client_button_save">Salvar</string>
 
     <string name="cpf_mask">###.###.###-##</string>
+    <string name="cnpj_mask">##.###.###.####-##</string>
     <string name="cep_mask">#####-###</string>
 
-    <string name="register_professional_title">Cadastro do Profissional</string>
+    <string name="register_professional_title">Complete seu cadastro de Profissional</string>
     <string name="register_professional_name">Nome completo</string>
     <string name="register_professional_cnpj">CNPJ</string>
     <string name="register_professional_cpf">CPF</string>

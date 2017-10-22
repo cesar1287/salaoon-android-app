@@ -28,7 +28,7 @@ import es.dmoral.toasty.Toasty;
 
 public class RegisterProfessionalActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button hourFirst, hourFinal;
+    private Button btHourOpening, btHourClosing;
 
     private CheckBox cbHairDresse, cbMake, cbManicure;
 
@@ -43,19 +43,23 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_professional);
 
-        hourFirst = findViewById(R.id.register_button_hour_first);
-        hourFinal = findViewById(R.id.register_button_hour_final);
-
         mAuth = FirebaseAuth.getInstance();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         etName = findViewById(R.id.register_name);
         etName.getEditText().setText(mAuth.getCurrentUser().getDisplayName());
-        etCNPJ = findViewById(R.id.register_cnpj);
+        //etCNPJ = findViewById(R.id.register_cnpj);
         etCPF = findViewById(R.id.register_cpf);
         etCEP = findViewById(R.id.register_cep);
         etAddress = findViewById(R.id.register_address);
+
+        btHourOpening = findViewById(R.id.register_button_hour_first);
+        btHourClosing = findViewById(R.id.register_button_hour_final);
+
+        cbHairDresse = findViewById(R.id.check_register_hairdresse);
+        cbMake = findViewById(R.id.check_register_make);
+        cbManicure = findViewById(R.id.check_register_manicure);
 
         Button btSave = findViewById(R.id.register_save);
         btSave.setOnClickListener(this);
@@ -75,14 +79,17 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
     }
 
     private void attemptLogin() {
-        String uid, name, cnpj, cpf, cep, address;
+        String uid, name, cnpj, cpf, cep, address, hourOpening, hourClosing, specialty;
 
         uid = mAuth.getCurrentUser().getUid();
         name = etName.getEditText().getText().toString();
-        cnpj = etCNPJ.getEditText().getText().toString();
+        //cnpj = etCNPJ.getEditText().getText().toString();
         cpf = etCPF.getEditText().getText().toString();
         cep = etCEP.getEditText().getText().toString();
         address = etAddress.getEditText().getText().toString();
+
+        hourOpening = btHourOpening.getText().toString();
+        hourClosing = btHourClosing.getText().toString();
 
         boolean allFieldsFilled = true;
         boolean allFilledCorrectly = true;
@@ -115,9 +122,22 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
             etAddress.setErrorEnabled(false);
         }
 
-        if (allFieldsFilled) {
-            cpf = cpf.replaceAll("[.]", "").replaceAll("[-]", "");
+        if(hourOpening.equals(getResources().getString(R.string.register_professional_button_hour_first))){
+            allFieldsFilled = false;
+            Toasty.error(this, "Preenchimento do horário de abertura obrigatório", Toast.LENGTH_LONG, true).show();
+        }
 
+        if(hourClosing.equals(getResources().getString(R.string.register_professional_button_hour_final))){
+            allFieldsFilled = false;
+            Toasty.error(this, "Preenchimento do horário de fechamento obrigatório", Toast.LENGTH_LONG, true).show();
+        }
+
+        if(!cbHairDresse.isChecked() && !cbMake.isChecked() && !cbManicure.isChecked()){
+            allFieldsFilled = false;
+            Toasty.error(this, "Obrigatório o preenchimento de ao menos uma especialidade", Toast.LENGTH_LONG, true).show();
+        }
+
+        if (allFieldsFilled) {
             if (!Utility.isValidCPF(cpf)) {
                 allFilledCorrectly = false;
                 etCPF.setError("CPF inválido");
@@ -127,7 +147,23 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
         }
 
         if (allFieldsFilled && allFilledCorrectly) {
-            FirebaseHelper.writeNewClient(mDatabase, uid, name, cpf, cep, address);
+            StringBuilder stringBuilderSpecialty = new StringBuilder();
+            if(cbHairDresse.isChecked()){
+                stringBuilderSpecialty.append(getResources().getString(R.string.register_professional_hairdresse));
+                stringBuilderSpecialty.append(";");
+            }
+            if(cbMake.isChecked()){
+                stringBuilderSpecialty.append(getResources().getString(R.string.register_professional_check_make));
+                stringBuilderSpecialty.append(";");
+            }
+            if(cbManicure.isChecked()){
+                stringBuilderSpecialty.append(getResources().getString(R.string.register_professional_manicure));
+                stringBuilderSpecialty.append(";");
+            }
+
+            specialty = stringBuilderSpecialty.toString().toLowerCase();
+
+            FirebaseHelper.writeNewProfessional(mDatabase, uid, name, cpf, cep, address, hourOpening, hourClosing, specialty);
             Toasty.success(this, "Cadastrado com sucesso", Toast.LENGTH_SHORT, true).show();
             startActivity(new Intent(this, MainActivity.class));
             finish();
@@ -137,6 +173,9 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
     private void setupFieldMasks() {
         TextWatcher cpfMask = Utility.insertMask(getResources().getString(R.string.cpf_mask), etCPF.getEditText());
         etCPF.getEditText().addTextChangedListener(cpfMask);
+
+        /*TextWatcher cnpjMask = Utility.insertMask(getResources().getString(R.string.cnpj_mask), etCNPJ.getEditText());
+        etCNPJ.getEditText().addTextChangedListener(cnpjMask);*/
 
         TextWatcher cepMask = Utility.insertMask(getResources().getString(R.string.cep_mask), etCEP.getEditText());
         etCEP.getEditText().addTextChangedListener(cepMask);
@@ -153,7 +192,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
                 date.setHours(hourOfDay);
                 SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.US);
                 String formatted = format.format(date);
-                hourFirst.setText(formatted);
+                btHourOpening.setText(formatted);
             }
             }, calendar.getTime().getHours(), calendar.getTime().getMinutes(), true);
 
@@ -171,7 +210,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
                 date.setHours(hourOfDay);
                 SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.US);
                 String formatted = format.format(date);
-                hourFinal.setText(formatted);
+                btHourClosing.setText(formatted);
             }
         }, calendar.getTime().getHours(), calendar.getTime().getMinutes(), true);
 
