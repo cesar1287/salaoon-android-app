@@ -96,28 +96,28 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
 
         if (name.equals("")) {
             allFieldsFilled = false;
-            etName.setError("Campo obrigatório");
+            etName.setError(getString(R.string.error_required_field));
         } else {
             etName.setErrorEnabled(false);
         }
 
         if (cpf.equals("")) {
             allFieldsFilled = false;
-            etCPF.setError("Campo obrigatório");
+            etCPF.setError(getString(R.string.error_required_field));
         } else {
             etCPF.setErrorEnabled(false);
         }
 
         if (cep.equals("")) {
             allFieldsFilled = false;
-            etCEP.setError("Campo obrigatório");
+            etCEP.setError(getString(R.string.error_required_field));
         } else {
             etCEP.setErrorEnabled(false);
         }
 
         if (address.equals("")) {
             allFieldsFilled = false;
-            etAddress.setError("Campo obrigatório");
+            etAddress.setError(getString(R.string.error_required_field));
         } else {
             etAddress.setErrorEnabled(false);
         }
@@ -143,6 +143,25 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
                 etCPF.setError("CPF inválido");
             } else {
                 etCPF.setErrorEnabled(false);
+            }
+
+            String opening[] = hourOpening.split(":");
+            String closing[] = hourClosing.split(":");
+
+            int hoursOpen = Integer.parseInt(opening[0]);
+            int minutesOpen = Integer.parseInt(opening[1]);
+
+            int hoursClose = Integer.parseInt(closing[0]);
+            int minutesClose = Integer.parseInt(closing[1]);
+
+            if(hoursOpen>hoursClose){
+                allFilledCorrectly = false;
+                Toasty.error(this, "Horário de abertura não pode ser maior que a de fechamento", Toast.LENGTH_LONG, true).show();
+            }else if(hoursOpen==hoursClose){
+                if(minutesOpen>minutesClose){
+                    allFilledCorrectly = false;
+                    Toasty.error(this, "Horário de abertura não pode ser maior que a de fechamento", Toast.LENGTH_LONG, true).show();
+                }
             }
         }
 

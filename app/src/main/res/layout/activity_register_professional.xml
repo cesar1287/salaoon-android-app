@@ -149,14 +149,16 @@
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:text="@string/register_professional_button_hour_first"
-                    android:onClick="btn_hour_first"/>
+                    android:onClick="btn_hour_first"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
                 <Button
                     android:id="@+id/register_button_hour_final"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:text="@string/register_professional_button_hour_final"
-                    android:onClick="btn_hour_final"/>
+                    android:onClick="btn_hour_final"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
             </LinearLayout>
 
