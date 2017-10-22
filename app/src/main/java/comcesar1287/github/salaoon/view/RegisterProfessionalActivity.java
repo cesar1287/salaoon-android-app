@@ -124,23 +124,23 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
 
         if(hourOpening.equals(getResources().getString(R.string.register_professional_button_hour_first))){
             allFieldsFilled = false;
-            Toasty.error(this, "Preenchimento do horário de abertura obrigatório", Toast.LENGTH_LONG, true).show();
+            Toasty.error(this, getString(R.string.error_hour_opening_field_required), Toast.LENGTH_LONG, true).show();
         }
 
         if(hourClosing.equals(getResources().getString(R.string.register_professional_button_hour_final))){
             allFieldsFilled = false;
-            Toasty.error(this, "Preenchimento do horário de fechamento obrigatório", Toast.LENGTH_LONG, true).show();
+            Toasty.error(this, getString(R.string.error_hour_closing_field_required), Toast.LENGTH_LONG, true).show();
         }
 
         if(!cbHairDresse.isChecked() && !cbMake.isChecked() && !cbManicure.isChecked()){
             allFieldsFilled = false;
-            Toasty.error(this, "Obrigatório o preenchimento de ao menos uma especialidade", Toast.LENGTH_LONG, true).show();
+            Toasty.error(this, getString(R.string.error_specialty_checkbox_required), Toast.LENGTH_LONG, true).show();
         }
 
         if (allFieldsFilled) {
             if (!Utility.isValidCPF(cpf)) {
                 allFilledCorrectly = false;
-                etCPF.setError("CPF inválido");
+                etCPF.setError(getString(R.string.error_invalid_cpf));
             } else {
                 etCPF.setErrorEnabled(false);
             }
@@ -156,11 +156,11 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
 
             if(hoursOpen>hoursClose){
                 allFilledCorrectly = false;
-                Toasty.error(this, "Horário de abertura não pode ser maior que a de fechamento", Toast.LENGTH_LONG, true).show();
+                Toasty.error(this, getString(R.string.error_hour_opening_greater_then_closing), Toast.LENGTH_LONG, true).show();
             }else if(hoursOpen==hoursClose){
                 if(minutesOpen>minutesClose){
                     allFilledCorrectly = false;
-                    Toasty.error(this, "Horário de abertura não pode ser maior que a de fechamento", Toast.LENGTH_LONG, true).show();
+                    Toasty.error(this, getString(R.string.error_hour_opening_greater_then_closing), Toast.LENGTH_LONG, true).show();
                 }
             }
         }
@@ -183,7 +183,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
             specialty = stringBuilderSpecialty.toString().toLowerCase();
 
             FirebaseHelper.writeNewProfessional(mDatabase, uid, name, cpf, cep, address, hourOpening, hourClosing, specialty);
-            Toasty.success(this, "Cadastrado com sucesso", Toast.LENGTH_SHORT, true).show();
+            Toasty.success(this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT, true).show();
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }

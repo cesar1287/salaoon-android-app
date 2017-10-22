@@ -80,28 +80,28 @@ public class RegisterClientActivity extends AppCompatActivity implements View.On
 
         if(name.equals("")){
             allFieldsFilled = false;
-            etName.setError("Campo obrigatório");
+            etName.setError(getString(R.string.error_required_field));
         }else{
             etName.setErrorEnabled(false);
         }
 
         if(cpf.equals("")){
             allFieldsFilled = false;
-            etCPF.setError("Campo obrigatório");
+            etCPF.setError(getString(R.string.error_required_field));
         }else{
             etCPF.setErrorEnabled(false);
         }
 
         if(cep.equals("")){
             allFieldsFilled = false;
-            etCEP.setError("Campo obrigatório");
+            etCEP.setError(getString(R.string.error_required_field));
         }else{
             etCEP.setErrorEnabled(false);
         }
 
         if(address.equals("")){
             allFieldsFilled = false;
-            etAddress.setError("Campo obrigatório");
+            etAddress.setError(getString(R.string.error_required_field));
         }else{
             etAddress.setErrorEnabled(false);
         }
@@ -109,7 +109,7 @@ public class RegisterClientActivity extends AppCompatActivity implements View.On
         if(allFieldsFilled){
             if(!Utility.isValidCPF(cpf)){
                 allFilledCorrectly = false;
-                etCPF.setError("CPF inválido");
+                etCPF.setError(getString(R.string.error_invalid_cpf));
             }else{
                 etCPF.setErrorEnabled(false);
             }
@@ -117,7 +117,7 @@ public class RegisterClientActivity extends AppCompatActivity implements View.On
 
         if(allFieldsFilled && allFilledCorrectly) {
             FirebaseHelper.writeNewClient(mDatabase, uid, name, cpf, cep, address);
-            Toasty.success(this, "Cadastrado com sucesso", Toast.LENGTH_SHORT, true).show();
+            Toasty.success(this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT, true).show();
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }

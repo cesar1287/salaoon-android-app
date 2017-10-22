@@ -23,6 +23,8 @@
     <string name="error_unknown_error">Erro desconhecido, tente novamente e contate o administrador.</string>
     <string name="error_signin">Algo deu errado ao fazer login, tente novamente.</string>
     <string name="error_required_field">Campo obrigatório</string>
+    <string name="error_hour_opening_field_required">Preenchimento do horário de abertura obrigatório</string>
+    <string name="error_hour_closing_field_required">Preenchimento do horário de fechamento obrigatório</string>
 
     <string name="sign_with_text">Bem vindo ao Salão On</string>
     <string name="sign_with_text2">Faça seu login e aproveite</string>
@@ -54,5 +56,9 @@
     <string name="register_professional_hairdresse">Cabeleireiro(a)</string>
     <string name="register_professional_check_make">Maqueador(a)</string>
     <string name="register_professional_manicure">Manicure</string>
+    <string name="error_specialty_checkbox_required">Obrigatório o preenchimento de ao menos uma especialidade</string>
+    <string name="error_invalid_cpf">CPF inválido</string>
+    <string name="error_hour_opening_greater_then_closing">Horário de abertura não pode ser maior que a de fechamento</string>
+    <string name="successfully_registered">Cadastrado com sucesso</string>
 
 </resources>
