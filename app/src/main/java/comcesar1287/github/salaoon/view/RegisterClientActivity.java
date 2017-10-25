@@ -5,17 +5,22 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import comcesar1287.github.salaoon.R;
 import comcesar1287.github.salaoon.controller.firebase.FirebaseHelper;
 import comcesar1287.github.salaoon.controller.util.Utility;
+import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
 public class RegisterClientActivity extends AppCompatActivity implements View.OnClickListener{
@@ -33,10 +38,17 @@ public class RegisterClientActivity extends AppCompatActivity implements View.On
 
         mAuth = FirebaseAuth.getInstance();
 
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        CircleImageView ivPhoto = findViewById(R.id.register_client_photo);
+        Glide.with(this)
+                .load(firebaseUser.getPhotoUrl())
+                .into(ivPhoto);
+
         etName = findViewById(R.id.register_name);
-        etName.getEditText().setText(mAuth.getCurrentUser().getDisplayName());
+        etName.getEditText().setText(firebaseUser.getDisplayName());
         etCPF = findViewById(R.id.register_cpf);
         etCEP = findViewById(R.id.register_cep);
         etAddress = findViewById(R.id.register_address);

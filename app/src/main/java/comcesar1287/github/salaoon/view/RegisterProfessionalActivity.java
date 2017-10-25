@@ -12,7 +12,9 @@ import android.widget.CheckBox;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,6 +26,7 @@ import java.util.Locale;
 import comcesar1287.github.salaoon.R;
 import comcesar1287.github.salaoon.controller.firebase.FirebaseHelper;
 import comcesar1287.github.salaoon.controller.util.Utility;
+import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
 public class RegisterProfessionalActivity extends AppCompatActivity implements View.OnClickListener{
@@ -45,7 +48,14 @@ public class RegisterProfessionalActivity extends AppCompatActivity implements V
 
         mAuth = FirebaseAuth.getInstance();
 
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        CircleImageView ivPhoto = findViewById(R.id.register_professional_photo);
+        Glide.with(this)
+                .load(firebaseUser.getPhotoUrl())
+                .into(ivPhoto);
 
         etName = findViewById(R.id.register_name);
         etName.getEditText().setText(mAuth.getCurrentUser().getDisplayName());
